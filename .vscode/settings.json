@@ -1,0 +1,13 @@
+{
+    // install the vscode plugin Task StatusBar
+    "tasksStatusbar.taskLabelFilter": "Start",
+    // install the vscode plugin Pylance
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/server",
+    ],
+    "python.testing.pytestEnabled": true,
+    "python.testing.pytestArgs": [
+        "${workspaceFolder}/tests"
+    ],
+    "python.testing.unittestEnabled": true
+}

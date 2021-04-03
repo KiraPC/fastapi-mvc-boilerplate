@@ -1,0 +1,33 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start FastAPI",
+            "type": "shell",
+            "command": [
+                "uvicorn main:app --reload"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/server",
+                "env": {
+                    "ENV": "build"
+                }
+            }
+        },
+        {
+            "label": "Start FastAPI with Gunicorn",
+            "type": "shell",
+            "command": [
+                "gunicorn main:app --config ${workspaceFolder}/gunicorn_conf.py"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/server",
+                "env": {
+                    "ENV": "build"
+                }
+            }
+        }
+    ]
+}
