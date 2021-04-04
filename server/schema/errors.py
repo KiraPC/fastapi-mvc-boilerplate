@@ -12,3 +12,4 @@ class ErrorResponse(dict):
 class Errors():
     HTTP_500_INTERNAL_SERVER_ERROR = JSONResponse(ErrorResponse('Internal Server Error'), status.HTTP_500_INTERNAL_SERVER_ERROR)
     HTTP_404_NOT_FOUND = JSONResponse(ErrorResponse('Content not found on DB'), status.HTTP_404_NOT_FOUND)
+    HTTP_400_BAD_REQUEST = lambda message: JSONResponse(ErrorResponse(message), status.HTTP_400_BAD_REQUEST)
